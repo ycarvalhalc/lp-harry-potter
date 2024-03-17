@@ -3,9 +3,17 @@ import { api } from '../../lib/axios'
 import { Character } from '../../@types/characters.ts'
 
 import './index.scss'
+import { Filter } from '../../components/Filter'
 
 export function Characters() {
   const [allCharacters, setAllCharacters] = useState<Character[]>([])
+  const [characterNameToFilter, setCharacterNameToFilter] = useState('')
+
+  const filteredCharacters = allCharacters
+    .filter(character => {
+      return character.name.toLowerCase()
+        .includes(characterNameToFilter.toLocaleLowerCase())
+    })
 
   async function getCharacters() {
     const response = await api.get('api/characters')
@@ -19,19 +27,10 @@ export function Characters() {
 
   return (
     <div className='lp-harry-potter'>
-      {/* <header className='lp-harry-potter__header'>
-        <form>
-          <input 
-            type="text" 
-            placeholder="Procure pelo personagem"
-            onChange={handleInputFilterChange}
-          />
-        </form>
-        {charactersCurrentPage.length > 0 && <Pagination totalCount={filteredCharacters.length} perPage={characterPerPage} /> }
-      </header> */}
+      <Filter handleFilter={setCharacterNameToFilter} />
 
       <main className='lp-harry-potter__wrapper'>
-        {allCharacters.map((character: Character) => (
+        {filteredCharacters.map((character: Character) => (
           <div className='card' key={character.id}>
             <div className="card__wrapper">
               <h3 className='card__title'>{character.name}</h3>
