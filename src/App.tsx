@@ -1,7 +1,8 @@
-function App() {
+import { Characters } from './pages/Characters'
+
+export function App() {
+  
   return (
-    <h1>LP - Harry Potter</h1>
+    <Characters />
   )
 }
-
-export default App
