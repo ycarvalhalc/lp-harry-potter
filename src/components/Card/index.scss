@@ -1,0 +1,66 @@
+@import '../../styles/tokens';
+
+.card {
+  margin: 0.5rem;
+  width: 100%;
+
+  @media only screen and (min-width: 900px) {
+    width: unset;
+  }
+
+  &__wrapper {
+    font-size: 0.875rem;
+    border-radius: 6px;
+    padding: 1rem 2rem;
+    background-color: $gray-700;
+    width: 100%;
+    margin: 0 auto;
+
+    @media (min-width: 900px) {
+      width: 400px;
+      margin: 0;
+    }
+  }
+
+  &__title {
+    font-family: "Jolly Lodger", system-ui;
+    font-size: 2rem;
+    text-align: center;
+    border-bottom: 1px solid $gray-100;
+    margin-bottom: 1rem;
+  }
+
+  &__area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    @media (min-width: 900px) {
+      flex-wrap: unset;
+    }
+  }
+
+  &__avatar {
+    display: block;
+    height: 140px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  &__group {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  label {
+    width: 85px;
+    text-align: right;
+  }
+}
