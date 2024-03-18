@@ -10,6 +10,12 @@ React + TypeScript + Sass + Axios
 
 ## Rodando localmente
 
+Clone o projeto
+
+```bash
+   git clone https://github.com/ycarvalhalc/lp-harry-potter.git
+```
+
 Instale as dependências
 
 ```bash
