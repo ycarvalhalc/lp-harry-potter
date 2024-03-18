@@ -1,16 +1,22 @@
 @import '../../styles/tokens';
 
 .filter {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
   width: 100%;
-  max-width: 500px;
-  padding: 0 1rem;
-  position: relative;
+  padding: 1.5rem 1rem;
+  background-color: $gray-900;
+
+  &__content {
+    position: relative;
+    width: 100%;
+
+    @media only screen and (min-width: 900px) {
+      max-width: 500px;
+    }
+  }
 
   &__label {
     font-size: 1rem;
@@ -30,8 +36,9 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    margin: auto;
     right: 1.5rem;
+    height: 35px;
+    margin: auto;
     border: 0;
     background-color: $gray-100;
     display: flex;

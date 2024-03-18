@@ -29,28 +29,29 @@ export function Filter({ handleFilter }: FilterProps) {
 
   return (
     <form className="filter" onSubmit={handleSubmit}>
-      <input 
-        className="filter__input"
-        id="character"
-        type="text" 
-        placeholder="Nome do personagem"
-        onChange={handleInputChange}
-        value={inputFilter}
-      />
+      <div className="filter__content">
+        <input 
+          className="filter__input"
+          id="character"
+          type="text" 
+          placeholder="Nome do personagem"
+          onChange={handleInputChange}
+          value={inputFilter}
+        />
 
-      {!inputFilter 
-        ? (
-          <button className="filter__button">
-            <Search size={25} /> 
-          </button>
-        )
-        : (
-          <button className="filter__button" onClick={handleCloseClick}>
-            <X size={25} />
-          </button>
-        )
-      } 
-      
+        {!inputFilter 
+          ? (
+            <button className="filter__button">
+              <Search size={25} /> 
+            </button>
+          )
+          : (
+            <button className="filter__button" onClick={handleCloseClick}>
+              <X size={25} />
+            </button>
+          )
+        } 
+      </div> 
     </form>
   )
 }
