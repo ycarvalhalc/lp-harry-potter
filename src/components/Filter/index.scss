@@ -1,3 +1,5 @@
+@import '../../styles/tokens';
+
 .filter {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -6,9 +8,12 @@
   justify-content: center;
   gap: 1rem;
   width: 100%;
+  max-width: 500px;
+  padding: 0 1rem;
+  position: relative;
 
   &__label {
-    font-size: 2rem;
+    font-size: 1rem;
   }
 
   &__input {
@@ -16,6 +21,17 @@
     border-radius: 6px;
     padding: 0.5rem;
     width: 100%;
-    max-width: 500px;
+    outline: none;
+    background-color: $gray-100;
+    color: $gray-700;
+  }
+
+  svg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 1.5rem;
+    color: $gray-700;
   }
 }

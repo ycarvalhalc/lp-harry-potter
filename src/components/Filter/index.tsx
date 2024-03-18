@@ -1,6 +1,7 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent, FormEvent } from "react";
 
 import './index.scss'
+import { Search } from "lucide-react";
 
 interface FilterProps {
   handleFilter: (name: string) => void
@@ -11,9 +12,12 @@ export function Filter({ handleFilter }: FilterProps) {
     handleFilter(event.target.value)
   }
 
+  function handleSubmit(event: FormEvent) {
+    event.preventDefault()
+  }
+
   return (
-    <form className="filter">
-      <label className="filter__label" htmlFor="character">Filtrar: </label>
+    <form className="filter" onSubmit={handleSubmit}>
       <input 
         className="filter__input"
         id="character"
@@ -21,6 +25,8 @@ export function Filter({ handleFilter }: FilterProps) {
         placeholder="Nome do personagem"
         onChange={handleInputChange}
       />
+
+      <Search size={25} />
     </form>
   )
 }
